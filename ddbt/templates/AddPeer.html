@@ -83,10 +83,10 @@
 			<a href="{% url 'signup' %}" class="site-btn">Sign Up Free</a>
 			<nav class="main-menu">
 				<ul class="menu-list">
-					<li><a href="https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/templates/AddPeer.html">Add Peers</a></li>
-					<li><a href="https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/templates/AddToBlock.html">Add Peers to Blocks</a></li>
-					<li><a href="https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/templates/Transactions.html">Transactions</a></li>
-					<li><a href="https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/templates/ViewChain.html">View Chain</a></li>
+					<li><a href="{% url 'AddPeer' %}">Add Peers</a></li>
+					<li><a href="{% url 'AddToBlock' %}">Add Peers to Blocks</a></li>
+					<li><a href="{% url 'Transactions' %}">Transactions</a></li>
+					<li><a href="{% url 'ViewChain' %}">View Chain</a></li>
 				</ul>
 			</nav>
 		</div>
