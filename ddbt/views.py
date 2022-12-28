@@ -13,9 +13,9 @@ from datetime import date
 
 def ViewChain(request):
     if request.method == 'GET':
-        with open('https://github.com/Venkey2238/ddbt-app/blob/main/BC_DB.txt', 'rb') as input:
-            blockchain = pickle.load(input)
-        input.close()
+#         with open('https://github.com/Venkey2238/ddbt-app/blob/main/BC_DB.txt', 'rb') as input:
+#             blockchain = pickle.load(input)
+#         input.close()
         output = ''
         output+='<table align=\"center\" border=\"1\"><tr><th><font size=\"3\" color=\"black\">Transaction No</th>'
         output+='<th><font size=\"3\" color=\"black\">From Peer</th>'
