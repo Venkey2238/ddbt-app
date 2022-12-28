@@ -13,7 +13,7 @@ from datetime import date
 
 def ViewChain(request):
     if request.method == 'GET':
-        with open('BC_DB.txt', 'rb') as input:
+        with open('https://github.com/Venkey2238/ddbt-app/blob/main/BC_DB.txt', 'rb') as input:
             blockchain = pickle.load(input)
         input.close()
         output = ''
