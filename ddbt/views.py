@@ -13,9 +13,9 @@ from datetime import date
 
 def ViewChain(request):
     if request.method == 'GET':
-#         with open('https://github.com/Venkey2238/ddbt-app/blob/main/BC_DB.txt', 'rb') as input:
-#             blockchain = pickle.load(input)
-#         input.close()
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'rb') as input:
+            blockchain = pickle.load(input)
+        input.close()
         output = ''
         output+='<table align=\"center\" border=\"1\"><tr><th><font size=\"3\" color=\"black\">Transaction No</th>'
         output+='<th><font size=\"3\" color=\"black\">From Peer</th>'
@@ -69,7 +69,7 @@ def TransactionsSubmit(request):
         topeer = request.POST.get('t2', False)
         coin = request.POST.get('t3', False)
         
-        with open('BC_DB.txt', 'rb') as input:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'rb') as input:
             blockchain = pickle.load(input)
         input.close()
 
@@ -77,7 +77,7 @@ def TransactionsSubmit(request):
         output = frompeer+","+topeer+","+coin+","+str(today)
         blockchain.addTransaction(output)
 
-        with open('BC_DB.txt', 'wb') as outputs:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'wb') as outputs:
             pickle.dump(blockchain, outputs, pickle.HIGHEST_PROTOCOL)
         outputs.close()
         
@@ -88,7 +88,7 @@ def TransactionsSubmit(request):
 def BlockAdded(request):
     if request.method == 'POST':
         name = request.POST.get('t1', False)
-        with open('BC_DB.txt', 'rb') as input:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'rb') as input:
             blockchain = pickle.load(input)
         input.close()
 
@@ -102,7 +102,7 @@ def BlockAdded(request):
                 blockchain.mine()
                 break;
         blockchain.peer.remove(peer)
-        with open('BC_DB.txt', 'wb') as outputs:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txtt', 'wb') as outputs:
             pickle.dump(blockchain, outputs, pickle.HIGHEST_PROTOCOL)
         outputs.close()
 
@@ -141,7 +141,7 @@ def AddToBlock(request):
     if request.method == 'GET':
         output = ''
         output+='<tr><td><font size=\"3\" color=\"black\">Choose&nbsp;Peer&nbsp;Name</td><td><select name=\"t1\">'
-        with open('BC_DB.txt', 'rb') as input:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'rb') as input:
             blockchain = pickle.load(input)
         input.close()
         for i in range(len(blockchain.peer)):
@@ -179,10 +179,10 @@ def index(request):
 def AddPeer(request):
     if request.method == 'GET':
         blockchain = Blockchain()
-        #with open('BC_DB.txt', 'wb') as outputs:
+        #with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'wb') as outputs:
         #    pickle.dump(blockchain, outputs, pickle.HIGHEST_PROTOCOL)
         #outputs.close()
-        with open('BC_DB.txt', 'rb') as input:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'rb') as input:
             blockchain = pickle.load(input)
         input.close()    
         output = ''
@@ -198,12 +198,12 @@ def AddPeerAction(request):
     if request.method == 'POST':
         name = request.POST.get('t1', False)
         #blockchain = Blockchain()
-        with open('BC_DB.txt', 'rb') as input:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'rb') as input:
             blockchain = pickle.load(input)
         input.close()    
         x = name
         blockchain.addPeer(x)
-        with open('BC_DB.txt', 'wb') as outputs:
+        with open('https://cdn.jsdelivr.net/gh/Venkey2238/ddbt-app/ddbt/static/BC_DB.txt', 'wb') as outputs:
             pickle.dump(blockchain, outputs, pickle.HIGHEST_PROTOCOL)
         outputs.close()
 
